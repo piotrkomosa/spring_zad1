@@ -1,20 +1,21 @@
 package org.java.zad_domowe;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class ProductRepository {
 
-    private ProductRepository productRepository;
-
-
-
-    private List<Product> products;
-
-    public void add(Product product) {
-       this.productRepository.add(product);
+    public List<Product> products;
+    public ProductRepository(){
+       products = new LinkedList<>();
     }
 
-    public void count(Product product){
-        product.getPrice();
+
+    public void add(Product product) {
+        products.add(product);
+    }
+
+    public List<Product> findAll(ProductRepository productRepository) {
+        return products;
     }
 }

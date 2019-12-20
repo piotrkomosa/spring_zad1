@@ -18,26 +18,13 @@ public class ProductController {
 
     @GetMapping("/")
     public String add(Model model) {
-
         Product product = new Product();
-        model.addAttribute("product", new Product());
+        model.addAttribute("product", product);
         model.addAttribute("products",products);
         return "home";
     }
-    @PostMapping("/lista")
-    public String add(Product product) {
-        products.add(product);
-        return "redirect:/lista";
+        @PostMapping("/lista")
+        public String findAll(List<Product> products) {
+        return "lista";
     }
-
-//    @GetMapping("/lista")
-//    public String list(@RequestParam String name, @RequestParam Double price) {
-//        List<Product> results;
-//        for (Product product : products) {
-//            results += product.getName() + " " + product.getPrice() + "<br/>";
-//        }
-//        return results.toString();
-//
-//    }
-
 }

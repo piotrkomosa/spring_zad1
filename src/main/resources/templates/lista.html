@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<ul class="horizontal" >
+<ul th:action="/lista" method="post">
     <li th:action="/lista"  th:each=" product: ${products}" th:text="|${product.name} $ {product.price}|"></li>
 </ul>
 
